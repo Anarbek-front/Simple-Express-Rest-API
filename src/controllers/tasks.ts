@@ -1,13 +1,15 @@
 import type { Request, Response } from 'express'
-import { tasks } from '../data.ts'
+import { completedTasks, tasks } from '../data.ts'
 
 type TaskParams = {
     id: string
 }
 
-export const getAllTasks = (req: Request, res: Response) => {
+export const getAllTasks = (req: Request, res: Response) =>
     res.json({ data: tasks })
-}
+
+export const getAllCompleteTask = (req: Request, res: Response) =>
+    res.json({ data: completedTasks })
 
 export const getTaskById = (req: Request<TaskParams>, res: Response) => {
     const { findTask } = req
@@ -18,6 +20,16 @@ export const getTaskById = (req: Request<TaskParams>, res: Response) => {
 
 export const createNewTask = (req: Request, res: Response) => {
     res.json({ data: req.newTask })
+}
+
+export const createTask = (req: Request, res: Response) => {
+    const newTask = {
+        id: Date.now(),
+        title: req.body.title.trim(),
+        completed: req.body.completed,
+    }
+    completedTasks.push(newTask)
+    res.status(201).json({ data: newTask })
 }
 
 export const editTaskById = (req: Request<TaskParams>, res: Response) => {

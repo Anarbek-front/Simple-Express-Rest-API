@@ -10,5 +10,10 @@ declare namespace Express {
             title: string
         }
         taskId: number
+        newCompleteTask: {
+            id: number
+            title: string
+            completed: boolean
+        }
     }
 }

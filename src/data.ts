@@ -10,3 +10,26 @@ export const tasks = [
     { id: 9, title: 'Handle Errors' },
     { id: 10, title: 'Implement Authentication' },
 ]
+
+export const completedTasks = [
+    {
+        id: Date.now(),
+        title: 'Number 63',
+        completed: false,
+    },
+    {
+        id: Date.now(),
+        title: 'Alfa',
+        completed: true,
+    },
+    {
+        id: Date.now(),
+        title: 'Miata',
+        completed: false,
+    },
+    {
+        id: Date.now(),
+        title: 'LEVIN',
+        completed: true,
+    },
+]

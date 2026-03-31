@@ -18,7 +18,5 @@ export const resolveCreateTask = (
 
     req.newTask = newTask
 
-    console.log(newTask)
-
     next()
 }
