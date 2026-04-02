@@ -17,10 +17,6 @@ import { validate } from '../middlewares/validate.ts'
 import { registerUserValidation } from '../validators/user.validator.ts'
 import { createNewUser } from '../controllers/users.ts'
 
-const app = express()
-
-app.use(express.json())
-
 const router = express.Router()
 
 router.get('/', getAllTasks)

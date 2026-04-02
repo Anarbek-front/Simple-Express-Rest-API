@@ -1,12 +1,10 @@
-// import express from 'express'
-// import { registerUserValidation } from '../validators/user.validator'
-// import { validate } from '../middlewares/validate'
-// import { createNewUser } from '../controllers/users'
+import express from 'express'
+import { registerUserValidation } from '../validators/user.validator.ts'
+import { validate } from '../middlewares/validate.ts'
+import { createNewUser } from '../controllers/users.ts'
 
-// const app = express()
+const router = express.Router()
 
-// app.use(express.json())
+router.post('/register', registerUserValidation, validate, createNewUser)
 
-// export const userRouter = express.Router()
-
-// userRouter.post('/register', registerUserValidation, validate, createNewUser)
+export default router
