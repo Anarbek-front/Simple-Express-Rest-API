@@ -5,8 +5,16 @@ type TaskParams = {
     id: string
 }
 
-export const getAllTasks = (req: Request, res: Response) =>
-    res.json({ data: tasks })
+export const getAllTasks = (req: Request, res: Response) => {
+    res.cookie('say', 'my', { maxAge: 6000, signed: true })
+    console.log(req.headers.cookie)
+    console.log(req.cookies)
+    console.log(req.signedCookies)
+    if (req.signedCookies.say && req.signedCookies.say === 'my') {
+        return res.json({ data: tasks })
+    }
+    return res.send({ msg: 'Sorry. You need the correct cookie' })
+}
 
 export const getAllCompleteTask = (req: Request, res: Response) =>
     res.json({ data: completedTasks })
