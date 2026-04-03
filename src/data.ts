@@ -33,3 +33,12 @@ export const completedTasks = [
         completed: true,
     },
 ]
+
+export const users = [
+    { id: Date.now().toString, username: 'wqertty', password: '123123qwe' },
+    { id: Date.now().toString(), username: 'thunder', password: 'qwe123123' },
+    { id: Date.now().toString(), username: 'ctrl', password: 'qw123123e' },
+    { id: Date.now().toString(), username: 'write', password: '123qwe123' },
+    { id: Date.now().toString(), username: 'timer', password: '123123rty' },
+    { id: Date.now().toString(), username: 'truwww', password: '321qe' },
+]
