@@ -35,7 +35,7 @@ export const completedTasks = [
 ]
 
 export const users = [
-    { id: Date.now().toString, username: 'wqertty', password: '123123qwe' },
+    { id: Date.now().toString(), username: 'wqertty', password: '123123qwe' },
     { id: Date.now().toString(), username: 'thunder', password: 'qwe123123' },
     { id: Date.now().toString(), username: 'ctrl', password: 'qw123123e' },
     { id: Date.now().toString(), username: 'write', password: '123qwe123' },

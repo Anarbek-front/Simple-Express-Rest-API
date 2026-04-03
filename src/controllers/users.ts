@@ -1,4 +1,4 @@
-import { request, type Request, type Response } from 'express'
+import { type Request, type Response } from 'express'
 import { users } from '../data.ts'
 
 export const createNewUser = (req: Request, res: Response) => {
@@ -29,7 +29,10 @@ export const userAuth = (req: Request, res: Response) => {
 }
 
 export const userAuthStatus = (req: Request, res: Response) => {
+    req.sessionStore.get(req.sessionID, (err, session) => {
+        console.log(session)
+    })
     return req.session.user
-        ? res.status(200).send(request.session.user)
-        : res.status(401).send({ msg: 'Nor Authenticated' })
+        ? res.status(200).send(req.session.user)
+        : res.status(401).send({ msg: 'Not Authenticated' })
 }
